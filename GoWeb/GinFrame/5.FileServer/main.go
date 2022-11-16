@@ -9,7 +9,7 @@ func main() {
 }
 
 func fileServer(c *gin.Context) {
-	path := "D:/go/src/Interview_Questions"
+	path := "D:/go/src/Interview_Questions/GoWeb/GinFrame/5.FileServer/"
 	fileName := path + c.Query("name")
 	c.File(fileName)
 }
