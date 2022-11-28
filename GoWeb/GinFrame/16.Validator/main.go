@@ -43,6 +43,7 @@ func main() {
 		}
 		c.JSON(http.StatusBadRequest, "数据校验失败! ")
 	})
+	r.Run(":9090")
 }
 
 func testData(c *gin.Context) {
