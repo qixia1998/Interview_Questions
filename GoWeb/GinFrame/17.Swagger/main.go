@@ -29,9 +29,20 @@ func main() {
 	r.Run(":9090")
 }
 
+// @Tags 注册接口
+// @Summary 注册
+// @Description register
+// @Accept json
+// @Produce json
+// @Param username formData string true "用户名"
+// @Param password formData string true "密码"
+// @Success 200 {string} json "{"code":200, "data":"{"name":"username","password":"password"}","msg":"OK"}"
+// @Router /register [post]
+
 func register(c *gin.Context) {
 	var user User
-	err := c.Bind(&user)
+	//err := c.Bind(&user)
+	err := c.BindQuery(&user)
 	if err != nil {
 		fmt.Println("绑定错误: ", err)
 		c.JSON(http.StatusBadRequest, "数据错误！")
