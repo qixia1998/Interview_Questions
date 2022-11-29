@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 	"net/http"
 )
 
@@ -19,6 +21,8 @@ type Response struct {
 
 func main() {
 	r := gin.Default()
+	//swagger 中间件主要的作用是：方便前端对接口进行调试。不影响接口的实际功能
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler)) // 使用swagger中间件
 	r.GET("/login", login)
 	r.POST("/register", register)
 	r.Run(":9090")
@@ -39,6 +43,16 @@ func register(c *gin.Context) {
 	}
 	c.JSON(http.StatusOK, res)
 }
+
+// @Tags 登录接口
+// @Summary 登录
+// @Description login
+// @Accept json
+// @Produce json
+// @Param username query string true "用户名"
+// @Param password query string false "密码"
+// @Success 200 {string} json "{"code":200, "data":"{"name":"username","password":"password"}","msg":"OK"}"
+// @Router /login [get]
 
 func login(c *gin.Context) {
 	userName := c.Query("name")
