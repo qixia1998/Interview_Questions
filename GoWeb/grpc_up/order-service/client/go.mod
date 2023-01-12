@@ -1,4 +1,4 @@
-module order-service/server
+module order-service/client
 
 go 1.19
 
