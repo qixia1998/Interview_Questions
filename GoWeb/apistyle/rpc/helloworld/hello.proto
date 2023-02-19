@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "/Interview_Questions/GoWeb/apistyle/rpc/helloworld";
+option go_package = "./";
 
 package helloworld;
 
