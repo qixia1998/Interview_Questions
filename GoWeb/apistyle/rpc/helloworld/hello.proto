@@ -4,6 +4,7 @@ option go_package = "./";
 
 package helloworld;
 
+// protoc -I. --go_out=plugins=grpc:. hello.proto
 // The greeting server definition.
 service Greeter {
   // Sends a greeting
