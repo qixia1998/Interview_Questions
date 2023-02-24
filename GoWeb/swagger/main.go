@@ -2,14 +2,13 @@ package main
 
 import (
 	"Interview_Questions/GoWeb/swagger/api"
-	"fmt"
 	"log"
-	"net/http"
-
-	"github.com/gin-gonic/gin"
 
 	// This line is necessary for go-swagger to find your docs!
-	_ "github.com/marmotedu/gopractise-demo/swagger/docs"
+	_ "Interview_Questions/GoWeb/swagger/docs"
+	"fmt"
+	"github.com/gin-gonic/gin"
+	"net/http"
 )
 
 var users []*api.User

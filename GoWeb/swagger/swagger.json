@@ -1,0 +1,100 @@
+{
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "swagger": "2.0",
+  "info": {
+    "description": "Documentation of our awesome API.",
+    "title": "awesome.",
+    "version": "0.1.0"
+  },
+  "host": "some-url.com",
+  "basePath": "/",
+  "paths": {
+    "/users": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Create a user in memory.",
+        "operationId": "createUserRequest",
+        "parameters": [
+          {
+            "description": "This text will appear as description of your request body.",
+            "name": "Body",
+            "in": "body",
+            "schema": {}
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/createUserResponse"
+          },
+          "default": {
+            "$ref": "#/responses/errResponse"
+          }
+        }
+      }
+    },
+    "/users/{name}": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Get a user from memory.",
+        "operationId": "getUserRequest",
+        "parameters": [
+          {
+            "type": "string",
+            "x-go-name": "Name",
+            "name": "name",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/getUserResponse"
+          },
+          "default": {
+            "$ref": "#/responses/errResponse"
+          }
+        }
+      }
+    }
+  },
+  "responses": {
+    "createUserResponse": {
+      "description": "This text will appear as description of your response body."
+    },
+    "errResponse": {
+      "description": "This text will appear as description of your error response body.",
+      "headers": {
+        "code": {
+          "type": "integer",
+          "format": "int64",
+          "description": "Error code."
+        },
+        "message": {
+          "type": "string",
+          "description": "Error message."
+        }
+      }
+    },
+    "getUserResponse": {
+      "description": "This text will appear as description of your response body."
+    }
+  },
+  "securityDefinitions": {
+    "basic": {
+      "type": "basic"
+    }
+  }
+}

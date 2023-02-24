@@ -2,23 +2,23 @@
 //
 // Documentation of our awesome API.
 //
-//     Schemes: http, https
-//     BasePath: /
-//     Version: 0.1.0
-//     Host: some-url.com
+//	 Schemes: http, https
+//	 BasePath: /
+//	 Version: 0.1.0
+//	 Host: some-url.com
 //
-//     Consumes:
-//     - application/json
+//	 Consumes:
+//	 - application/json
 //
-//     Produces:
-//     - application/json
+//	 Produces:
+//	 - application/json
 //
-//     Security:
-//     - basic
+//	 Security:
+//	 - basic
 //
-//    SecurityDefinitions:
-//    basic:
-//      type: basic
+//	SecurityDefinitions:
+//	basic:
+//	  type: basic
 //
 // swagger:meta
 package docs
