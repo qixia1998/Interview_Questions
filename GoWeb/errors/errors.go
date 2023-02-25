@@ -56,16 +56,16 @@ func bindUser() error {
 	return nil
 }
 
-//func getUser() error {
-//	if err := queryDatabase(); err != nil {
-//		// Step2: Wrap the error with a new error message.
-//		return errors.Wrap(err, "get user failed.")
-//	}
-//
-//	return nil
-//}
-//
-//func queryDatabase() error {
-//	// Step1. Create error with specified error code.
-//	return errors.WithCode(code.ErrDatabase, "user 'qixia' not found.")
-//}
+func getUser() error {
+	if err := queryDatabase(); err != nil {
+		// Step2: Wrap the error with a new error message.
+		return errors.Wrap(err, "get user failed.")
+	}
+
+	return nil
+}
+
+func queryDatabase() error {
+	// Step1. Create error with specified error code.
+	return errors.WithCode(code.ErrDatabase, "user 'qixia' not found.")
+}

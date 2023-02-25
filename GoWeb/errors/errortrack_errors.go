@@ -7,19 +7,19 @@ import (
 )
 
 func main() {
-	if err := getUser(); err != nil {
+	if err := getUser1(); err != nil {
 		fmt.Printf("%+v\n", err)
 	}
 }
 
-func getUser() error {
-	if err := queryDatabase(); err != nil {
+func getUser1() error {
+	if err := queryDatabase1(); err != nil {
 		return errors.Wrap(err, "get user failed.")
 	}
 
 	return nil
 }
 
-func queryDatabase() error {
+func queryDatabase1() error {
 	return errors.WithCode(code.ErrDatabase, "user 'Lingfei Kong' not found.")
 }
