@@ -1,0 +1,29 @@
+Name: courseware
+Host: 0.0.0.0
+Port: 8888
+
+CoursewareRpc:
+  Etcd:
+    Hosts:
+      - etcd:2379
+    Key: courseware.rpc
+
+Auth:
+  AccessSecret: 38f9c7af24ff11edb92900163e30ef81
+  AccessExpire: 86400
+
+Log:
+  Mode: file
+  Path: /var/log/go-zero/courseware-api
+  Level: error
+
+Prometheus:
+  Host: 0.0.0.0
+  Port: 9082
+  Path: /metrics
+
+Telemetry:
+  Name: courseware-api
+  Endpoint: http://jaeger:14268/api/traces
+  Sampler: 1.0
+  Batcher: jaeger
