@@ -36,7 +36,7 @@ func (l *UserInfoLogic) UserInfo(in *user.UserInfoRequest) (*user.UserInfoRespon
 
 	return &user.UserInfoResponse{
 		Id:        userInfo.Id,
-		Username:  userInfo.Username,
+		UserName:  userInfo.Username,
 		LoginName: userInfo.LoginName,
 		Sex:       userInfo.Sex,
 	}, nil
