@@ -4,10 +4,10 @@ import (
 	"flag"
 	"fmt"
 
-	"rpc/internal/config"
-	"rpc/internal/server"
-	"rpc/internal/svc"
-	"rpc/user"
+	"Interview_Questions/Go-Zero/go-zero-courseware/user/rpc/internal/config"
+	"Interview_Questions/Go-Zero/go-zero-courseware/user/rpc/internal/server"
+	"Interview_Questions/Go-Zero/go-zero-courseware/user/rpc/internal/svc"
+	"Interview_Questions/Go-Zero/go-zero-courseware/user/rpc/user"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/core/service"
