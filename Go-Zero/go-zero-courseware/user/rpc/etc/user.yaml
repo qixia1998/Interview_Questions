@@ -1,0 +1,15 @@
+Name: user.rpc
+ListenOn: 127.0.0.1:8080
+Etcd:
+  Hosts:
+  - etcd:2379
+  Key: user.rpc
+
+  # mysql数据源
+  Mysql:
+    DataSource: root:liufutian@tcp(127.0.0.1:3306)/go_zero_courseware?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+
+  # redis缓存
+  CacheRedis:
+    - Host: 127.0.0.1:6379
+      Pass:
