@@ -1,0 +1,79 @@
+definitions:
+  dto.AdminLoginInput:
+    properties:
+      password:
+        example: "123456"
+        type: string
+      username:
+        example: admin
+        type: string
+    required:
+    - password
+    - username
+    type: object
+  dto.AdminLoginOutput:
+    properties:
+      token:
+        example: token
+        type: string
+    type: object
+  middleware.Response:
+    properties:
+      data: {}
+      errmsg:
+        type: string
+      errno:
+        $ref: '#/definitions/middleware.ResponseCode'
+      stack: {}
+      trace_id: {}
+    type: object
+  middleware.ResponseCode:
+    enum:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 401
+    - 1000
+    - 2001
+    type: integer
+    x-enum-varnames:
+    - SuccessCode
+    - UndefErrorCode
+    - ValidErrorCode
+    - InternalErrorCode
+    - InvalidRequestErrorCode
+    - CustomizeCode
+    - GROUPALL_SAVE_FLOWERROR
+info:
+  contact: {}
+paths:
+  /admin_login/login:
+    post:
+      consumes:
+      - application/json
+      description: 管理员登陆
+      operationId: /admin_login/login
+      parameters:
+      - description: body
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/dto.AdminLoginInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: success
+          schema:
+            allOf:
+            - $ref: '#/definitions/middleware.Response'
+            - properties:
+                data:
+                  $ref: '#/definitions/dto.AdminLoginOutput'
+              type: object
+      summary: 管理员登陆
+      tags:
+      - 管理员接口
+swagger: "2.0"
