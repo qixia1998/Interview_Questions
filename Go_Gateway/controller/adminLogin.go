@@ -2,11 +2,11 @@ package controller
 
 import (
 	"encoding/json"
-	"github.com/e421083458/golang_common/lib"
 	"github.com/gin-gonic/contrib/sessions"
 	"github.com/gin-gonic/gin"
 	"github.com/qixia1998/Interview_Questions/Go_Gateway/dao"
 	"github.com/qixia1998/Interview_Questions/Go_Gateway/dto"
+	"github.com/qixia1998/Interview_Questions/Go_Gateway/golang_common/lib"
 	"github.com/qixia1998/Interview_Questions/Go_Gateway/middleware"
 	"github.com/qixia1998/Interview_Questions/Go_Gateway/public"
 	"time"
