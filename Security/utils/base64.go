@@ -16,3 +16,18 @@ func Base64Decoding(str string) (string, error) {
 	ret := string(retByte)
 	return ret, err
 }
+
+// Base64UrlEncoding base64编码
+func Base64UrlEncoding(str string) string {
+	src := []byte(str)
+	ret := base64.URLEncoding.EncodeToString(src)
+	return ret
+}
+
+// Base64UrlDecoding base64解码
+func Base64UrlDecoding(str string) (string, error) {
+
+	retByte, err := base64.URLEncoding.DecodeString(str)
+	ret := string(retByte)
+	return ret, err
+}
